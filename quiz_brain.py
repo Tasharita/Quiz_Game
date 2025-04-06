@@ -1,4 +1,5 @@
 class QuizBrain:
+    # Constructor
     def __init__(self,question_list):
         self.question_number = 0
         self.question_list = question_list
@@ -10,10 +11,10 @@ class QuizBrain:
 
     def next_question(self):
         """Returns the next question in the list"""
-        current_question = self.question_list[self.question_number]
+        current_question = self.question_list[self.question_number] # Get the current question object using the index(question number) in the list, question_list
         self.question_number += 1
         user_answer = input(f"Q.{self.question_number}: {current_question.text} (True/False)?: ")
-        self.check_answer(user_answer, current_question.answer)
+        self.check_answer(user_answer, current_question.answer) # uses method check_answer
 
     def check_answer(self,user_answer,correct_answer):
         """Checks whether the answer input by user is the correct answer"""
